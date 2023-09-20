@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:battery/battery.dart';
 import 'package:flutter/services.dart';
 
@@ -22,6 +23,7 @@ class BatteryPercentageScreen extends StatefulWidget {
 }
 
 class _BatteryPercentageScreenState extends State<BatteryPercentageScreen> {
+  // ignore: unused_field
   final Battery _battery = Battery();
   String _batteryPercentage = 'Unknown';
   String _wifiState = 'Unknown';
@@ -127,24 +129,24 @@ class _BatteryPercentageScreenState extends State<BatteryPercentageScreen> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: getWifiState,
-              child: Text('Fetch Wi-Fi State'),
+              child: const Text('Fetch Wi-Fi State'),
             ),
             SizedBox(height: 20), // Add spacing
-            Text(
+            const Text(
               'MAC Address:',
               style: TextStyle(fontSize: 18),
             ),
             Text(
               _macAddress,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: getMacAddress,
-              child: Text('Fetch and Show MAC Address'),
+              child: const Text('Fetch and Show MAC Address'),
             ),
             SizedBox(height: 20), // Add spacing
-            Text(
+            const Text(
               'Bluetooth Protocols:', // Display Bluetooth protocols
               style: TextStyle(fontSize: 18),
             ),
@@ -153,11 +155,11 @@ class _BatteryPercentageScreenState extends State<BatteryPercentageScreen> {
                   .map((protocol) => Text(protocol))
                   .toList(),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed:
                   fetchBluetoothProtocols, // Invoke method to fetch Bluetooth protocols
-              child: Text('Fetch and List Bluetooth Protocols'),
+              child: const Text('Fetch and List Bluetooth Protocols'),
             ),
           ],
         ),
