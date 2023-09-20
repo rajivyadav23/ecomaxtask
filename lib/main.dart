@@ -1,22 +1,28 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:battery/battery.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: BatteryPercentageScreen(),
     );
   }
 }
 
 class BatteryPercentageScreen extends StatefulWidget {
+  const BatteryPercentageScreen({super.key});
+
   @override
   _BatteryPercentageScreenState createState() =>
       _BatteryPercentageScreenState();
@@ -98,40 +104,40 @@ class _BatteryPercentageScreenState extends State<BatteryPercentageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('EcoMaxGo Task'), // Updated app title
+        title: const Text('EcoMaxGo Task'), // Updated app title
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'Battery Percentage:',
               style: TextStyle(fontSize: 18),
             ),
             Text(
               _batteryPercentage,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: getBatteryPercentage,
-              child: Text('Get Battery Percentage'),
+              child: const Text('Get Battery Percentage'),
             ),
-            SizedBox(height: 20), // Add spacing
-            Text(
+            const SizedBox(height: 20), // Add spacing
+            const Text(
               'Wi-Fi State:',
               style: TextStyle(fontSize: 18),
             ),
             Text(
               _wifiState,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: getWifiState,
               child: const Text('Fetch Wi-Fi State'),
             ),
-            SizedBox(height: 20), // Add spacing
+            const SizedBox(height: 20), // Add spacing
             const Text(
               'MAC Address:',
               style: TextStyle(fontSize: 18),
@@ -145,7 +151,7 @@ class _BatteryPercentageScreenState extends State<BatteryPercentageScreen> {
               onPressed: getMacAddress,
               child: const Text('Fetch and Show MAC Address'),
             ),
-            SizedBox(height: 20), // Add spacing
+            const SizedBox(height: 20), // Add spacing
             const Text(
               'Bluetooth Protocols:', // Display Bluetooth protocols
               style: TextStyle(fontSize: 18),
